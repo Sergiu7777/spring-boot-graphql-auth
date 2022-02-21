@@ -1,0 +1,30 @@
+type Query {
+    books: [Book]
+    authors: [Author]
+    libraries: [Library]
+    getBook(id: Int!): Book
+    getAuthor(id: Int!): Author
+    getLibrary(id: Int!): Library
+}
+
+type Book {
+    id: Int!
+    title: String!
+    isbn: String!
+    authors: [Author]!
+    year: Int!
+    libraries: [Library]
+    price: Float
+}
+
+type Author {
+    id: Int!
+    fullName: String!
+    books: [Book]!
+}
+
+type Library {
+    id: Int!
+    address: String!
+    books: [Book]
+}
