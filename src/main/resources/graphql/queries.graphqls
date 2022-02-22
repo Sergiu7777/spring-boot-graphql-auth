@@ -1,30 +1,30 @@
-type Query {
-    books: [Book]
-    authors: [Author]
-    libraries: [Library]
-    getBook(id: Int!): Book
-    getAuthor(id: Int!): Author
-    getLibrary(id: Int!): Library
+extend type Query {
+    books: [BookDto]
+    authors: [AuthorDto]
+    libraries: [LibraryDto]
+    getBook(id: Int!): BookDto
+    getAuthor(id: Int!): AuthorDto
+    getLibrary(id: Int!): LibraryDto
 }
 
-type Book {
+type BookDto {
     id: Int!
     title: String!
     isbn: String!
-    authors: [Author]!
+    authors: [AuthorDto]!
     year: Int!
-    libraries: [Library]
+    libraries: [LibraryDto]
     price: Float
 }
 
-type Author {
+type AuthorDto {
     id: Int!
     fullName: String!
-    books: [Book]!
+    books: [BookDto]!
 }
 
-type Library {
+type LibraryDto {
     id: Int!
     address: String!
-    books: [Book]
+    books: [BookDto]
 }
