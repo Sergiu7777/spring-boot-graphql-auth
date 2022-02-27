@@ -17,6 +17,7 @@ public class Author {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String fullName;
+    private String bio;
     @ManyToMany(fetch = FetchType.EAGER)
     private List<Book> books;
 }

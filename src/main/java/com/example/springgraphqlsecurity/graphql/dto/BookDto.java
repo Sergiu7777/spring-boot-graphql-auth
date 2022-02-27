@@ -1,7 +1,5 @@
 package com.example.springgraphqlsecurity.graphql.dto;
 
-import com.example.springgraphqlsecurity.entity.Author;
-import com.example.springgraphqlsecurity.entity.Library;
 import lombok.Builder;
 import lombok.Data;
 
@@ -14,6 +12,8 @@ public class BookDto {
     private Long id;
     private String title;
     private String isbn;
+    private String description;
+
     private List<AuthorDto> authors;
     private int year;
     private List<LibraryDto> libraries;
