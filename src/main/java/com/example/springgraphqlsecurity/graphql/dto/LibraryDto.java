@@ -1,10 +1,8 @@
 package com.example.springgraphqlsecurity.graphql.dto;
 
-import com.example.springgraphqlsecurity.entity.Book;
 import lombok.Builder;
 import lombok.Data;
 
-import javax.persistence.*;
 import java.util.List;
 
 @Data
@@ -12,5 +10,7 @@ import java.util.List;
 public class LibraryDto {
     private Long id;
     private String address;
+    private String email;
+    private String phone;
     private List<BookDto> books;
 }
