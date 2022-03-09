@@ -18,4 +18,5 @@ public class BookDto {
     private int year;
     private List<LibraryDto> libraries;
     private BigDecimal price;
+    private String downloadLink;
 }

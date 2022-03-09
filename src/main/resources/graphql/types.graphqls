@@ -1,3 +1,38 @@
-type Query {
+type BookDto {
+    id: Int!
+    title: String!
+    isbn: String!
+    authors: [AuthorDto]!
+    year: Int!
+    libraries: [LibraryDto]
+    price: Float
+    downloadLink: String
+}
 
+type AuthorDto {
+    id: Int!
+    fullName: String!
+    books: [BookDto]!
+}
+
+type LibraryDto {
+    id: Int!
+    address: String!
+    books: [BookDto]
+}
+
+input BookInput {
+    title: String!
+    isbn: String!
+    authors: [String]!
+    year: Int!
+    price: Float!
+}
+
+input AuthorInput {
+    fullName: String!
+}
+
+input LibraryInput {
+    address: String!
 }

@@ -4,6 +4,7 @@ import com.example.springgraphqlsecurity.entity.Author;
 import com.example.springgraphqlsecurity.graphql.dto.AuthorDto;
 import com.example.springgraphqlsecurity.mapper.AuthorMapper;
 import com.example.springgraphqlsecurity.repository.AuthorRepository;
+import graphql.kickstart.tools.GraphQLMutationResolver;
 import graphql.kickstart.tools.GraphQLQueryResolver;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -15,7 +16,7 @@ import java.util.stream.Collectors;
 @Slf4j
 @AllArgsConstructor
 @Component
-public class AuthorResolver implements GraphQLQueryResolver {
+public class AuthorResolver implements GraphQLQueryResolver, GraphQLMutationResolver {
     private final AuthorRepository authorRepository;
     private final AuthorMapper authorMapper;
 
