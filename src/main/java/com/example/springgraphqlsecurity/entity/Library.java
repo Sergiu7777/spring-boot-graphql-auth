@@ -19,6 +19,7 @@ public class Library {
     private String address;
     private String email;
     private String phone;
+
     @ManyToMany(fetch = FetchType.EAGER)
     private List<Book> books;
 }

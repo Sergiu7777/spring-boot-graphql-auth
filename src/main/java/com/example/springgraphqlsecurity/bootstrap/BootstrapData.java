@@ -27,9 +27,30 @@ public class BootstrapData implements CommandLineRunner {
     @Override
     @Transactional
     public void run(String... args) throws Exception {
-        Author author = new Author(null, "Grant Cardone", "American business coach and writer", new ArrayList<>());
-        Library library = new Library(null, "New York", "librarius@unic.com", "+3736765573", new ArrayList<>());
-        Book book = new Book(null, "10X rule", "1234", "Motivational book", List.of(author), 2012, List.of(library), new BigDecimal("20.95"));
+        Author author = new Author(
+                null,
+                "Grant Cardone",
+                "American business coach and writer",
+                new ArrayList<>());
+
+        Library library = new Library(
+                null,
+                "New York",
+                "librarius@unic.com",
+                "+3736765573",
+                new ArrayList<>());
+
+        Book book = new Book(
+                null,
+                "10X rule",
+                "1234",
+                "Motivational book",
+                null,
+                "downloadLink",
+                List.of(author),
+                2012,
+                List.of(library),
+                new BigDecimal("20.95"));
 
         library.setBooks(List.of(book));
         author.setBooks(List.of(book));

@@ -1,0 +1,9 @@
+extend type Query {
+    books: [BookDto]
+    getBook(id: Int!): BookDto
+}
+
+extend type Mutation {
+    saveBook(input: BookInput!): Boolean
+    uploadFile: String
+}
